@@ -16,16 +16,18 @@
 .breadcrumb-item-container-cell-label--active {
   padding: 10px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: default;
 }
+
 .breadcrumb-item-container-cell-label {
   padding: 10px;
   cursor: pointer;
 }
 
 .breadcrumb-item-container-cell-label--active:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
+
 .breadcrumb-item-container-cell-label:hover {
   text-decoration: underline;
 }
