@@ -1,0 +1,31 @@
+.breadcrumb-container {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.breadcrumb-item-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.breadcrumb-item-container-cell {
+  padding: 10px;
+}
+
+.breadcrumb-item-container-cell-label--active {
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.breadcrumb-item-container-cell-label {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.breadcrumb-item-container-cell-label--active:hover {
+  text-decoration: underline;
+}
+.breadcrumb-item-container-cell-label:hover {
+  text-decoration: underline;
+}
