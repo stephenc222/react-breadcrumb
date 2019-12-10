@@ -21,7 +21,7 @@ function App() {
           crumbs={DUMMY_BREADCRUMBS} />
       </div>
     </div>
-  );
+  )
 }
 
 export default App
