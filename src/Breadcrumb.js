@@ -6,6 +6,8 @@ const getPath = (crumbArr, index) => {
   return crumbArr.map(({ label }) => label).splice(0, index + 1).join('/')
 }
 
+const Spacer = () => <div />
+
 const BreadcrumbItem = ({ index, crumb, crumbArr, separator, activePath }) => {
   const path = getPath(crumbArr, index)
   const isActive = path === activePath
@@ -16,15 +18,13 @@ const BreadcrumbItem = ({ index, crumb, crumbArr, separator, activePath }) => {
     typeof crumb.onClick === 'function' && crumb.onClick(path)
   }
 
-  const spacer = <div className='breadcrumb-spacer' />
-
   const labelClassName = isActive
     ? 'breadcrumb-item-container-cell-label--active'
     : 'breadcrumb-item-container-cell-label'
 
   const labelSeparator = index > 0
     ? separator
-    : spacer
+    : <Spacer />
 
   return (
     <div className='breadcrumb-item-container'>

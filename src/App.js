@@ -6,7 +6,6 @@ function App() {
   const [activePath, setActivePath] = useState('one/two/three')
 
   const onBreadcrumbClick = path => {
-    console.log('on breadcrumb click', path)
     setActivePath(path)
   }
 
@@ -25,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
