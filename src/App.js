@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react'
 import Breadcrumb from './Breadcrumb'
-import './App.css';
-
-const DUMMY_BREADCRUMBS = [
-  { label: 'one', onClick: (path) => console.warn('PATH:', { path }) },
-  { label: 'two', onClick: (path) => console.warn('PATH:', { path }) },
-  { label: 'three', onClick: (path) => console.warn('PATH:', { path }) },
-  { label: 'four', onClick: (path) => console.warn('PATH:', { path }) }
-]
-
-const DUMMY_ACTIVE_PATH = 'one/two'
+import './App.css'
 
 function App() {
+  const [activePath, setActivePath] = useState('one/two/three')
+
+  const onBreadcrumbClick = path => {
+    setActivePath(path)
+  }
+
+  const DUMMY_BREADCRUMBS = ['one', 'two', 'three', 'four']
+    .map(label => ({ label, onClick: onBreadcrumbClick }))
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
+    <div style={{ textAlign: 'center' }}>
       <h1>BREADCRUMB DEMO</h1>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Breadcrumb activePath={DUMMY_ACTIVE_PATH} crumbs={DUMMY_BREADCRUMBS} />
+        <Breadcrumb
+          activePath={activePath}
+          crumbs={DUMMY_BREADCRUMBS} />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
